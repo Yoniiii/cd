@@ -20,7 +20,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           with:
             projectBaseDir: .
-            args: >
+            args:
               -Dsonar.organization=Yoniiii_cd
               -Dsonar.projectKey=yoniiii
         - name: Archive dependency check reports
