@@ -18,3 +18,14 @@ jobs:
             registry: docker.io
             repository: yoniperetti/cd
             tag_with_sha: true
+	- name: SonarCloud Scan
+  	  uses: SonarSource/sonarcloud-github-action@v1.6
+    pmd:
+  
+      runs-on: ubuntu-latest
+    
+      steps:
+      - uses: sfdx-actions/setup-pmd@v1
+      - name: run-pmd
+        run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
+
