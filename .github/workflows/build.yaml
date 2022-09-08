@@ -20,13 +20,13 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           with:
             args:
-              -Dsonar.organization=Yoniiii_cd
-              -Dsonar.projectKey=yoniiii
+              -Dsonar.organization=yoniiii
+              -Dsonar.projectKey=Yoniiii_cd
         - name: Archive dependency check reports
           uses: actions/upload-artifact@v1
           with:
-            name: reports
-            path: .
+            name: sonar_reports
+            path: reports
         - name: build-push
           uses: docker/build-push-action@v1
           with:
